@@ -1,0 +1,63 @@
+{% extends 'base.html'%}
+
+{% block title %}
+	Home Page
+{% endblock %}
+
+{%block content %}
+    <div class="text-center" style="margin-top: 15px;">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    </div>
+    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>Hi</svg>
+      
+        <div class="container">
+          <div class="carousel-caption text-start" style="text-center"><br>
+            <h1>WELCOME</h1>
+            <p><h3>To Responsible Young Men Areana</h3></p>
+          </div>
+        </div>
+      </div> 
+    </div>   
+
+    <div class="container marketing"><br>
+
+    <!-- Three columns of text below the carousel -->
+
+    <body class="text-center">
+        <div class="col">
+        <h2>Some Of Our Activities</h2>
+        <p>Fun Stuff...</p>
+        <br>
+        <div class="row">
+            {% for user  in users %}
+            {% include 'includes/users_modal.html' %}
+                <div class="col-md-6">
+                    <div style="margin-bottom: 5px" class="card text-center bg-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">{{user.username}}</h5>
+                            <img src="vlcsnap-2022-07-28-15h41m56s041.jpg"><br>
+                            <button type="button" class="btn btn-outline-info" style="margin-bottom:5px" data-toggle="modal" data-target="#Modal-Selling-{{user .id}}">
+                            About
+                            </button>
+                            <p class="card-text"><strong>{{user.about }}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    </body>
+    <!-- /.row -->
+        
+</div>
+{% endblock %}
+
