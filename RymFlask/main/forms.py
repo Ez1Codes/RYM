@@ -2,7 +2,7 @@ from cProfile import label
 import email
 from xml.dom import ValidationErr
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitFiel,ValidationError
+from wtforms import StringField, PasswordField, SubmitField,ValidationError
 from wtforms.validators import Length, EqualTo, DataRequired, Email
 from main.models import User
 
