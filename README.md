@@ -1,3 +1,5 @@
+```
+
 # RYM
 # A flask application for Responsible Young Men
 
@@ -19,3 +21,4 @@ from main import models
 from main.models import db
 db.create_all()
 exit()
+```
